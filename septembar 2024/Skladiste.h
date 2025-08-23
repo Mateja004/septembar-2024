@@ -18,6 +18,6 @@ public:
 	void Izdvoji(Pice& a2, int broj);
 	void Presipaj(Pice& a3, Pice& a2);
 	bool DovoljnaKolicina(int nabavka);
-	void Vratinaj(Pice** piceMin, Pice** piceMax);
+	void VratiNaj(Pice** piceMin, Pice** piceMax);
 };
 

@@ -3,13 +3,13 @@
 class Sok :
     public Pice
 {
-public:
-    char* ukus;
-    float procenatSoka;
-    float cena;
 private:
+    char* ukus;
+    int procenatSoka;
+    float cena;
+public:
     Sok();
-    Sok(double zapremina,const char* ukus, float procenatSoka, float cena);
+    Sok(double zapremina,const char* ukus, int procenatSoka, float cena);
     ~Sok();
     Sok(const Sok& obj3);
     ostream& Prikazi(ostream& izlaz)const;
