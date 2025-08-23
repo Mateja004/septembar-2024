@@ -9,7 +9,7 @@ public:
     float cena;
 private:
     Sok();
-    Sok(double zapremina, int brojAmbalaze,const char* ukus, float procenatSoka, float cena);
+    Sok(double zapremina,const char* ukus, float procenatSoka, float cena);
     ~Sok();
     Sok(const Sok& obj3);
     ostream& Prikazi(ostream& izlaz)const;

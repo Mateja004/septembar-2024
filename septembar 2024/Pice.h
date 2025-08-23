@@ -8,8 +8,8 @@ protected:
 	double zapremina;
 	int brojAmbalaza;
 public:
-	Pice() :zapremina(0){};
-	Pice(double zapremina) :zapremina(zapremina){};
+	Pice() :zapremina(0),brojAmbalaza(0){};
+	Pice(double zapremina) :zapremina(zapremina),brojAmbalaza(1){};
 	virtual ~Pice() {};
 	Pice(const Pice& obj);
 	friend ostream& operator<<(ostream& izlaz, Pice& a1);

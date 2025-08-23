@@ -11,9 +11,9 @@ Sok::Sok() {
 	zapremina = 0;
 	brojAmbalaza = 0;
 }
-Sok::Sok(double zapremina, int brojAmbalaze,const char* ukus, float procenatSoka, float cena) {
+Sok::Sok(double zapremina,const char* ukus, float procenatSoka, float cena) {
 	this->zapremina = zapremina;
-	this->brojAmbalaza = brojAmbalaze;
+	this->brojAmbalaza = 1;
 	this->ukus = new char[strlen(ukus) + 1];
 	strcpy(this->ukus, ukus);
 	this->cena = cena;

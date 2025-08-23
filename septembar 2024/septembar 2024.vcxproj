@@ -133,6 +133,7 @@
     <ClInclude Include="Voda.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Pice.cpp" />
     <ClCompile Include="Skladiste.cpp" />
     <ClCompile Include="Sok.cpp" />

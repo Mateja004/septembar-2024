@@ -37,24 +37,26 @@ Skladiste::~Skladiste() {
 	delete[]niz;
 }
 void Skladiste::Dodaj(Pice* a) {
-	for (int i = 0;i < trbr;i++) {
-		if (typeid(*a) == typeid(*niz[i])) {
-			if (typeid(*a)==typeid(Voda)){
-				if(a->vratizapreminu() == niz[i]->vratizapreminu()){
-					niz[i]->SetBrojAmbalaze(niz[i]->vratibrAmbalaze() + 1);
-					return;
-				}
-				else{
-					niz[trbr++]=a;
-					return;
-				}
-			} 
-			else{
-				if(a->vratizapreminu()==niz[i]->vratizapreminu()&&a->)
-				//za sok
+	for (int i = 0; i < trbr; i++) {
+		if (a->vratizapreminu() == niz[i]->vratizapreminu()) {
+			if (dynamic_cast<Voda*>(niz[i])!=nullptr && dynamic_cast<Voda*>(a)!=nullptr) {
+				niz[i]->SetBrojAmbalaze(niz[i]->vratibrAmbalaze() + 1);
+				return;
+			}
+			Sok *nizniz = dynamic_cast<Sok*>(niz[i]);
+			Sok*aa = dynamic_cast<Sok*>(a);
+			if (aa != nullptr && nizniz != nullptr && strcmp(nizniz->ukus,aa->ukus)==0) {
+				niz[i]->SetBrojAmbalaze(niz[i]->vratibrAmbalaze() + 1);
+				return;
 			}
 		}
-	}	
+	}
+	if (trbr < maxbr) {
+		niz[trbr++] = a;
+	}
+	else {
+		cout << "Nema mesta u skladistu!" << endl;
+	}
 }
 
 
