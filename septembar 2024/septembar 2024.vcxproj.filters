@@ -27,6 +27,12 @@
     <ClInclude Include="Skladiste.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sokovi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fabrika.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pice.cpp">
@@ -42,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sokovi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
