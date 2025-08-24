@@ -142,6 +142,10 @@
     <ClCompile Include="Sokovi.cpp" />
     <ClCompile Include="Voda.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="NovaFabrikaSokova.txt" />
+    <Text Include="NovaFabrikaVode.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

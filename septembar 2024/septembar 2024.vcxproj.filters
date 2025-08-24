@@ -54,4 +54,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="NovaFabrikaVode.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="NovaFabrikaSokova.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
