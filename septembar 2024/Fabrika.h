@@ -116,7 +116,7 @@ void Fabrika<T>::Dodaj(T t) {
     }
     niz[trBr++] = t;
     for (int i = 0; i < trBr - 1; i++) {
-        for (int j = 0; j < trBr - i - 1; j++) {
+        for (int j = 0; j < trBr-i - 1; j++) {
             if (niz[j] >= niz[j + 1]) {
                 T pom = niz[j];
                 niz[j] = niz[j + 1];
@@ -178,16 +178,13 @@ int Fabrika<T>::NajmanjeAmbalaza(float vr) const {
     }
     int broj = 0;
     float ukVR = 0;
-    for (int i = trBr - 1; i >= 0; i--) {
+    for (int i = trBr-1 ; i >= 0; i--) {
         ukVR += niz[i];
-        if (ukVR <= vr) {
-            broj++;
-        }
-        else {
-            break;
+        broj++;
+        if (ukVR >= vr) {
+            return broj;
         }
     }
-    return broj;
 }
 
 template<>
@@ -199,11 +196,10 @@ int Fabrika<Sokovi>::NajmanjeAmbalaza(float vr) const {
     float ukVR = 0;
     for (int i = trBr - 1; i >= 0; i--) {
         ukVR += niz[i].getZapremina();
-        if (ukVR <= vr) {
-            broj++;
-        }
-        else {
-            break;
+       
+        broj++;
+        if (ukVR >= vr) {
+            return broj;
         }
     }
     return broj;
@@ -227,7 +223,7 @@ void Fabrika<T>::Ucitaj(const char* nazivFajla) {
     if (!fajl.is_open()) {
         throw runtime_error("Nije moguce otvoriti fajl!");
     }
-    trBr = 0; // Resetujemo broj elemenata
+   trBr = 0; // Resetujemo broj elemenata
     T pom;
     while (fajl >> pom && trBr < maxBr) {
         niz[trBr] = pom;
