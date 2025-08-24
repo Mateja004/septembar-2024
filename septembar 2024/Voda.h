@@ -7,21 +7,22 @@ class Voda :
 {
 public:
     Voda():Pice(){}
-    Voda(double zapremina) :Pice(zapremina) {}
+    Voda(float zapremina) :Pice(zapremina) {}
     ~Voda() {}
     Voda(const Voda& obj2);
-    ostream& Prikazi(ostream& izlaz)const;
-    double vratizapreminu()const {
+    ostream& Print(ostream& izlaz)const;
+    float vratizapreminu()const {
         return zapremina;
     }
     int vratibrAmbalaze()const {
         return brojAmbalaza;
     }
-    double vratiUkupnuZap()const {
+    float vratiUkupnuZap()const {
         return brojAmbalaza * zapremina;
     }
     void SetBrojAmbalaze(int n){
         brojAmbalaza=n;
     }
+    void Prikazi()const;
 };
 

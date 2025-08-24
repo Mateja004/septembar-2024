@@ -7,6 +7,6 @@ Pice::Pice(const Pice& obj) {
 	this->zapremina = obj.zapremina;
 }
 ostream& operator<<(ostream& izlaz, Pice& a1) {
-	a1.Prikazi(izlaz);
+	a1.Print(izlaz);
 	return izlaz;
 }

@@ -18,6 +18,7 @@ public:
 	void Izdvoji(Pice& a2, int broj);
 	void Presipaj(Pice& a3, Pice& a2);
 	bool DovoljnaKolicina(int nabavka);
-	void VratiNaj(Pice** piceMin, Pice** piceMax);
-};
+	void VratiNaj(Pice*& piceMin, Pice*& piceMax); //mora da se prosledi referenca pointera (*&)
+};												// zato sto je u mainu prosledjen samo pointer
+												// a mora da se u funkciji vrati naj menja vrednost
 

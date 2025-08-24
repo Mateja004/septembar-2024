@@ -11,7 +11,7 @@ Sok::Sok() {
 	zapremina = 0;
 	brojAmbalaza = 0;
 }
-Sok::Sok(double zapremina,const char* ukus, float procenatSoka, float cena) {
+Sok::Sok(float zapremina,const char* ukus, int procenatSoka, float cena) {
 	this->zapremina = zapremina;
 	this->brojAmbalaza = 1;
 	this->ukus = new char[strlen(ukus) + 1];
@@ -30,7 +30,10 @@ Sok::Sok(const Sok& obj3) {
 	this->cena = obj3.cena;
 	this->procenatSoka = obj3.procenatSoka;
 }
-ostream& Sok::Prikazi(ostream& izlaz)const {
-	izlaz << " " << zapremina << " " << brojAmbalaza << " " << ukus << " " << cena << " " << procenatSoka << endl;
+ostream& Sok::Print(ostream& izlaz)const {
+	izlaz << "Zapremina: " << zapremina <<"L" << " Broj ambalaza" << brojAmbalaza << " Ukus:" << ukus << " Cena:" << cena << " Procenat soka:" << procenatSoka << endl;
 	return izlaz;
+}
+void Sok::Prikazi()const {
+	cout <<"Zapremina: " << zapremina << " Broj ambalaza: " << brojAmbalaza << " Ukus:" << ukus << " Cena:" << cena << " Procenat soka: " << procenatSoka << endl;
 }

@@ -37,6 +37,10 @@ Skladiste::~Skladiste() {
 	delete[]niz;
 }
 void Skladiste::Dodaj(Pice* a) {
+	if (a == nullptr) {
+		cout << "Nepravilno prosledjeno pice" << endl;
+		return;
+	}
 	for (int i = 0; i < trbr; i++) {
 		if (a->vratizapreminu() == niz[i]->vratizapreminu()) {
 			if (dynamic_cast<Voda*>(niz[i])!=nullptr && dynamic_cast<Voda*>(a)!=nullptr) {
@@ -61,7 +65,7 @@ void Skladiste::Dodaj(Pice* a) {
 ostream& operator<<(ostream& izlaz, const Skladiste& a2) {
 	izlaz << "U skladistu je:" << endl;
 	for (int i = 0; i < a2.trbr; i++) {
-		izlaz << a2.niz[i] << endl;
+		a2.niz[i]->Print(izlaz);
 	}
 	return izlaz;
 }
@@ -112,7 +116,7 @@ void Skladiste::Presipaj(Pice& a3, Pice& a2) {
 		return;
 	}
 	int brojManjih = 0;
-	brojManjih = a3.vratizapreminu() / a2.vratizapreminu();
+	brojManjih = static_cast<int>(  a3.vratizapreminu() / a2.vratizapreminu());
 	if (!brojManjih * a2.vratizapreminu() == a3.vratizapreminu()) {
 		cout << "nemoguce je presipati!" << endl;
 		return;
@@ -132,20 +136,23 @@ bool Skladiste::DovoljnaKolicina(int nabavka) {
 	return ukZapremina >= nabavka;
 }
 
-void Skladiste::VratiNaj(Pice** piceMin, Pice** piceMax) {
-	*piceMin = niz[0];
-	*piceMax = niz[0];
+void Skladiste::VratiNaj(Pice*& piceMin, Pice*& piceMax) {
+	if (trbr == 0) {
+		return;
+	}
+	piceMin = niz[0];
+	piceMax = niz[0];
 	double piceMaxx = niz[0]->vratiUkupnuZap();
 	double piceMinn = niz[0]->vratiUkupnuZap();
 	for (int i = 1; i < trbr; i++) {
 		double sadasnjaZap = niz[i]->vratiUkupnuZap();
 		if (sadasnjaZap >piceMaxx) {
 			piceMaxx = sadasnjaZap;
-			*piceMax = niz[i];
+			piceMax = niz[i];
 		}
 		if (sadasnjaZap < piceMinn) {
 			piceMinn = sadasnjaZap;
-			*piceMin = niz[i];
+			piceMin = niz[i];
 		}
 	}
 }

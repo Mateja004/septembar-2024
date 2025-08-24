@@ -9,17 +9,17 @@ private:
     float cena;
 public:
     Sok();
-    Sok(double zapremina,const char* ukus, int procenatSoka, float cena);
+    Sok(float zapremina,const char* ukus, int procenatSoka, float cena);
     ~Sok();
     Sok(const Sok& obj3);
-    ostream& Prikazi(ostream& izlaz)const;
-    double vratizapreminu()const {
+    ostream& Print(ostream& izlaz)const;
+    float vratizapreminu()const {
         return zapremina;
     }
     int vratibrAmbalaze()const {
         return brojAmbalaza;
     }
-    double vratiUkupnuZap()const {
+    float vratiUkupnuZap()const {
         return brojAmbalaza * zapremina;
     }
     void SetBrojAmbalaze(int n){
@@ -28,5 +28,6 @@ public:
      const char* vratiUkus()const {
         return ukus;
     }
+     void Prikazi()const;
 };
 

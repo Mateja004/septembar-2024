@@ -19,8 +19,8 @@ void zadatak1()
 	Pice* p2 = new Sok(0.75, ukus1, procenat1, odnosCene);
 	//p2->Prikazi(); 
 	cout << *p2 << endl;
-	float voda[] = { 1, 0.2, 2, 5, 1, 1, 2, 5 };
-	float sok[] = { 1, 0.2, 1.5, 0.5, 1, 0.5, 1, 1.5 };
+	float voda[] = { 1.0f, 0.2f, 2.0f, 5.0f, 1.0f, 1.0f, 2.0f, 5.0f };
+	float sok[] = { 1.0f, 0.2f, 1.5f, 0.5f, 1.0f, 0.5f, 1.0f, 1.5f };
 	Skladiste* s = new Skladiste(10);
 	// 2 poena 
 	for (int i = 0; i < 4; i++)
@@ -42,8 +42,8 @@ void zadatak1()
 	cout << *s << endl;
 
 	// 2 poena 
-	Sok sok(0.5, ukus1, procenat1, odnosCene);
-	s->Izdvoji(sok, 2);
+	Sok sokic(0.5f, ukus1, procenat1, odnosCene);
+	s->Izdvoji(sokic, 2);
 	//s->print(); 
 	cout << *s << endl;
 
